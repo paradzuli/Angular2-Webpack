@@ -9,6 +9,7 @@
                         <ul class="menu">
                             <li class="nav-menu"><a [routerLink]="['/cart']"> Cart </a></li>
                             <li class="nav-menu"><a [routerLink]="['/shop']">Shop</a></li>
+                            <li class="nav-menu"><a [routerLink]="['/rxtest']">Rx Test</a></li>
                             <li class="nav-menu"><a [routerLink]="['/admin']"> Admin Area </a> </li>
                         </ul>
                     </div>

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './start/app.component';
 
 
@@ -12,14 +14,19 @@ import { AdminModule } from './admin/admin.module';
 import { ShopComponent } from './shop/shop.component';
 
 import { ShoppingCartService } from './shared/shopping-cart.service';
-
 import { CartComponent } from './cart/cart.component';
+
+import { RxTestComponent } from './rxTest/rxtest.component';
+import { RxTestService } from './rxTest/rx-test.service';
+
 
 @NgModule({
     imports: [
         BrowserModule,
         AdminModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpModule,
+        FormsModule
     ],
     declarations: [
         AppComponent,
@@ -27,10 +34,12 @@ import { CartComponent } from './cart/cart.component';
         HomeComponent,
         ErrorComponent,
         ShopComponent,
-        CartComponent
+        CartComponent,
+        RxTestComponent    
     ],
     providers: [
-        ShoppingCartService
+        ShoppingCartService,
+        RxTestService
         ],
     bootstrap: [ AppComponent ]
 })
