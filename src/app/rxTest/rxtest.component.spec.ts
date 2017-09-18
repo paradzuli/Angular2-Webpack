@@ -90,4 +90,30 @@ describe('RX Test Component', () => {
         expect(trsAfterClick.length).toBe(2);
     });
 
+    it('check for the data binding after button click', () => {
+        let fixture = TestBed.createComponent(RxTestComponent);
+        let comp = fixture.componentInstance;
+
+        let button = fixture.debugElement.nativeElement.querySelector('button');
+        button.click();
+
+        fixture.detectChanges();
+
+        let trsAfterClick = fixture.debugElement.nativeElement.querySelectorAll('tr');
+        expect(trsAfterClick.length).toBe(2);
+
+        let tdIdContent = trsAfterClick[1].cells[0].textContent;
+        expect(tdIdContent).toContain('1');
+
+        let tdNameContent = trsAfterClick[1].cells[1].textContent;
+        expect(tdNameContent).toContain('Repo 1');
+
+        let tdHtmlUrlContent = trsAfterClick[1].cells[2].textContent;
+        expect(tdHtmlUrlContent).toContain('Repo 1');
+
+        let tdDescriptionContent = trsAfterClick[1].cells[3].textContent;
+        expect(tdDescriptionContent).toContain('Repo1');
+
+    });
+
 });
