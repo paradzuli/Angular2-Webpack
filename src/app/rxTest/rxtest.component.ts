@@ -23,10 +23,9 @@ export class RxTestComponent {
         this.loading = true;
         this.errorMessage = "";
         this.rxTestService.getRepos(this.userName)
-            .subscribe((response) => {
-                this.repos = response;
-            }, (error) => { this.errorMessage = error; this.loading = false; },
-            () => { this.loading = false;})
+            .subscribe((response) => { this.repos = response; },
+                       (error) => { this.errorMessage = error; this.loading = false; },
+                       () => { this.loading = false;})
     }
 
 }
