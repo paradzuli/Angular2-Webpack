@@ -34,6 +34,7 @@ describe('RX Test Service', () => {
                     expect(repoList.length).toBe(2);
                     expect(repoList[0].id).toContain('1');
                     expect(repoList[1].id).toContain('2');
+                    expect(repoList[1].html_url).toContain('Html');
                 });
 
             });
